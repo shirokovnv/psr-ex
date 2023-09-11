@@ -1,0 +1,53 @@
+{
+    "name": "shirokovnv/psr-ex",
+    "description": "PSR example implementations",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shirokov Nickolai",
+            "email": "shirokovnv@gmail.com",
+            "homepage": "https://github.com/shirokovnv"
+        }
+    ],
+    "homepage": "https://github.com/shirokovnv/psr-ex",
+    "keywords": ["PSR"],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0",
+        "psr/container": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "friendsofphp/php-cs-fixer": "^3.26",
+        "phpstan/phpstan": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shirokovnv\\PsrEx\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shirokovnv\\PsrEx\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": [
+            "./vendor/bin/phpunit"
+        ],
+        "sniff": [
+            "./vendor/bin/php-cs-fixer fix -vvv --dry-run --show-progress=dots"
+        ],
+        "format": [
+            "./vendor/bin/php-cs-fixer fix -vvv --show-progress=dots"
+        ],
+        "analyze": [
+            "./vendor/bin/phpstan analyze -c ./phpstan.neon --no-progress --ansi"
+        ],
+        "lint": [
+            "@format",
+            "@analyze"
+        ]
+    }
+}
