@@ -15,7 +15,7 @@ $container = new Container();
 // Put into the container
 $container->set(ServiceInterface::class, Service::class);
 
-// Get from container
+// Get from the container
 // assert instanceOf Service::class
 $instance = $container->get(ServiceInterface::class);
 
