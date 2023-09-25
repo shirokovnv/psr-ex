@@ -6,7 +6,6 @@ use Psr\EventDispatcher\ListenerProviderInterface;
 
 class ListenerProvider implements ListenerProviderInterface
 {
-    // TODO move to listener container interface
     /**
      * @param array<string, callable[]> $listeners
      */
