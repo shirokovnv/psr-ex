@@ -4,7 +4,11 @@
 
 [PSR-11][link-psr11] container implementation
 
+[PSR-14][link-psr14] event dispatcher implementation
+
 ## Usage
+
+### Container
 
 ```php
 
@@ -25,6 +29,29 @@ if ($container->has(ServiceInterface::class)) {
 }
 ```
 
+### Events
+
+```php
+
+use Shirokovnv\PsrEx\Event\EventDispatcher;
+use Shirokovnv\PsrEx\Event\ListenerProvider;
+
+$event = new MyEvent();
+$listener = new MyEventListener();
+
+$listenerProvider = new ListenerProvider();
+$eventDispatcher = new EventDispatcher();
+
+// Bind event and listener
+$listenerProvider->addListener($event::class, $listener);
+
+// Dispatch
+$eventDispatcher->dispatch($event);
+
+// Clear
+$listenerProvider->clearListeners();
+```
+
 ## Testing
 
 ``` bash
@@ -37,5 +64,5 @@ MIT. Please see the [license file](LICENSE.md) for more information.
 
 [link-ci]: https://github.com/shirokovnv/psr-ex/actions/workflows/ci.yml/badge.svg
 [link-psr11]: https://www.php-fig.org/psr/psr-11/
+[link-psr14]: https://www.php-fig.org/psr/psr-14/
 [link-author]: https://github.com/shirokovnv
-[link-contributors]: ../../contributors
