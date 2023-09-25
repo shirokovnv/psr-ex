@@ -7,10 +7,16 @@ use Psr\EventDispatcher\ListenerProviderInterface;
 class ListenerProvider implements ListenerProviderInterface
 {
     /**
+     * @var array<string, callable[]>
+     */
+    private array $listeners;
+
+    /**
      * @param array<string, callable[]> $listeners
      */
-    public function __construct(private array $listeners = [])
+    public function __construct(array $listeners = [])
     {
+        $this->listeners = $listeners;
     }
 
     /**
