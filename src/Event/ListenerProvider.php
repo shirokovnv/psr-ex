@@ -28,10 +28,28 @@ class ListenerProvider implements ListenerProviderInterface
     public function getListenersForEvent(object $event): iterable
     {
         $eventClass = $event::class;
+        $listeners = [];
 
-        return array_key_exists($eventClass, $this->listeners)
-            ? $this->listeners[$eventClass]
-            : [];
+        // check base class
+        if (array_key_exists($eventClass, $this->listeners)) {
+            $listeners += $this->listeners[$eventClass];
+        }
+
+        // check parent class
+        if (($parentClass = get_parent_class($event)) !== false && array_key_exists($parentClass, $this->listeners)) {
+            $listeners += $this->listeners[$parentClass];
+        }
+
+        // check event interfaces
+        if (($eventInterfaces = class_implements($event)) !== false) {
+            foreach ($eventInterfaces as $eventInterface) {
+                if (array_key_exists($eventInterface, $this->listeners)) {
+                    $listeners += $this->listeners[$eventInterface];
+                }
+            }
+        }
+
+        return $listeners;
     }
 
     /**
