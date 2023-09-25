@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Shirokovnv\PsrEx\Event;
+
 use Psr\EventDispatcher\ListenerProviderInterface;
 
 class ListenerProvider implements ListenerProviderInterface

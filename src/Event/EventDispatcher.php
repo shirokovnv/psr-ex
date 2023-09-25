@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Shirokovnv\PsrEx\Event;
+
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\EventDispatcher\ListenerProviderInterface;
 use Psr\EventDispatcher\StoppableEventInterface;
