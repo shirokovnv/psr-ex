@@ -40,7 +40,7 @@ $event = new MyEvent();
 $listener = new MyEventListener();
 
 $listenerProvider = new ListenerProvider();
-$eventDispatcher = new EventDispatcher();
+$eventDispatcher = new EventDispatcher($listenerProvider);
 
 // Bind event and listener
 $listenerProvider->addListener($event::class, $listener);
