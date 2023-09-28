@@ -49,7 +49,7 @@ class ListenerProvider implements ListenerProviderInterface
             }
         }
 
-        return $listeners;
+        return array_unique($listeners, SORT_REGULAR);
     }
 
     /**
