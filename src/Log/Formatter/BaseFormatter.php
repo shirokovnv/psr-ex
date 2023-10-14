@@ -28,7 +28,7 @@ class BaseFormatter implements FormatterInterface
     {
         $outputArr = [
             self::KEY_MESSAGE => $this->interpolate($record->getMessage(), $record->getContext()),
-            self::KEY_LEVEL => $this->convertLevelToString($record->getLevel()),
+            self::KEY_LEVEL => $this->stringifyLevel($record->getLevel()),
             self::KEY_TIMESTAMP => (new \DateTimeImmutable())->format(self::DEFAULT_DATETIME_FORMAT),
         ];
 
@@ -60,7 +60,7 @@ class BaseFormatter implements FormatterInterface
      * @param mixed $level
      * @return string
      */
-    protected function convertLevelToString(mixed $level): string
+    protected function stringifyLevel(mixed $level): string
     {
         if (is_string($level) || $level instanceof \Stringable) {
             return strtoupper((string) $level);
