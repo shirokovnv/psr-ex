@@ -40,9 +40,7 @@ class Logger extends AbstractLogger
      */
     public function log($level, \Stringable|string $message, array $context = []): void
     {
-        $record = new LogRecord($level, $message, $context);
-
-        $dataToBeLogged = $this->formatter->format($record);
+        $dataToBeLogged = $this->formatter->format(new LogRecord($level, $message, $context));
         $this->handler->handle($dataToBeLogged);
     }
 }
