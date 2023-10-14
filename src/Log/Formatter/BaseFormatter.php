@@ -16,7 +16,7 @@ class BaseFormatter implements FormatterInterface
 
     protected const DEFAULT_DATETIME_FORMAT = 'c';
 
-    protected const DEFAULT_FORMAT = '%timestamp% [%level%]: %message';
+    protected const DEFAULT_FORMAT = '%timestamp% [%level%]: %message%';
 
     protected const DEFAULT_SEPARATOR = ',';
 
