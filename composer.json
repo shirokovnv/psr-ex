@@ -16,12 +16,15 @@
     "require": {
         "php": ">=8.0",
         "psr/container": "^2.0",
-        "psr/event-dispatcher": "^1.0"
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6|^10.0",
         "friendsofphp/php-cs-fixer": "^3.26",
-        "phpstan/phpstan": "^1.9"
+        "phpstan/phpstan": "^1.9",
+        "fakerphp/faker": "2.0.x-dev",
+        "mikey179/vfsstream": "*"
     },
     "autoload": {
         "psr-4": {

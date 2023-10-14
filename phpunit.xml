@@ -16,6 +16,8 @@
 
             <exclude>./tests/Unit/Container/ContainerTestCase.php</exclude>
             <exclude>./tests/Unit/Event/EventTestCase.php</exclude>
+            <exclude>./tests/Unit/Log/Traits/WithRandomRecord.php</exclude>
+            <exclude>./tests/Unit/Log/Traits/WithVfs.php</exclude>
         </testsuite>
     </testsuites>
 
