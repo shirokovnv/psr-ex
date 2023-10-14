@@ -18,6 +18,7 @@ use Shirokovnv\PsrEx\Log\Formatter\BaseFormatter;
 use Shirokovnv\PsrEx\Log\Handler\FileHandler;
 use Shirokovnv\PsrEx\Log\Logger;
 
+// Example logging to the file
 $logger = new Logger(new FileHandler('log.txt'), new BaseFormatter());
 $logger->log(\Psr\Log\LogLevel::DEBUG, 'debug message', [ 'context' => 'some context' ]);
 ```
